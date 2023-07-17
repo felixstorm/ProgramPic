@@ -164,6 +164,7 @@ const char s_pic12f1822[] PROGMEM = "pic12f1822";
 const char s_pic12lf1822[] PROGMEM = "pic12lf1822";
 const char s_pic16f1823[] PROGMEM = "pic16f1823";
 const char s_pic16lf1823[] PROGMEM = "pic16lf1823";
+const char s_pic16f1825[] PROGMEM = "pic16f1825";
 
 struct deviceInfo {
     const char PROGMEM *name; // User-readable name of the device.
@@ -234,6 +235,8 @@ struct deviceInfo const devices[] PROGMEM = {
     {s_pic12lf1822, 0x2800, 2048, 0x8000, 0x1E000, 9, 256, 0, 0, FLASH4, EEPROM, MCLR_first},
     {s_pic16f1823, 0x2720, 2048, 0x8000, 0x1E000, 9, 256, 0, 0, FLASH4, EEPROM, MCLR_first},
     {s_pic16lf1823, 0x2820, 2048, 0x8000, 0x1E000, 9, 256, 0, 0, FLASH4, EEPROM, MCLR_first},
+    {s_pic16f1825, 0x2760, 8192, 0x8000, 0x1E000, 9, 256, 0, 0, FLASH4, EEPROM, MCLR_first},
+
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
