@@ -40,11 +40,11 @@
 #include <avr/pgmspace.h> // For PROGMEM
 
 // Pin mappings for the PIC programming shield.
-#define PIN_MCLR A1 // 0: MCLR is VPP voltage, 1: Reset PIC
+#define PIN_MCLR A4 // 0: MCLR is VPP voltage, 1: Reset PIC
 #define PIN_ACTIVITY A5 // LED that indicates read/write activity
-#define PIN_VDD 2 // Controls the power to the PIC
-#define PIN_CLOCK 4 // Clock pin
-#define PIN_DATA 7 // Data pin
+#define PIN_VDD A2 // Controls the power to the PIC
+#define PIN_CLOCK A0 // Clock pin
+#define PIN_DATA A1 // Data pin
 #define MCLR_RESET HIGH // PIN_MCLR state to reset the PIC
 #define MCLR_VPP LOW // PIN_MCLR state to apply 13v to MCLR/VPP pin
 
