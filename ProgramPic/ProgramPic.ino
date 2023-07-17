@@ -52,6 +52,7 @@
 #define DELAY_SETTLE 50 // Delay for lines to settle for reset
 #define DELAY_TPPDP 5 // Hold time after raising MCLR
 #define DELAY_THLD0 5 // Hold time after raising VDD
+#define DELAY_PGMMODE_MS 100 // Hold time (in milliseconds!) after entering/exiting program mode
 #define DELAY_TSET1 1 // Data in setup time before lowering clock
 #define DELAY_THLD1 1 // Data in hold time after lowering clock
 #define DELAY_TDLY2 1 // Delay between commands or data
@@ -1183,6 +1184,7 @@ void enterProgramMode() {
         digitalWrite(PIN_MCLR, MCLR_VPP);
         delayMicroseconds(DELAY_TPPDP);
     }      
+    delay(DELAY_PGMMODE_MS);
     // Now in program mode, starting at the first word of program memory.
     state = STATE_PROGRAM;
     pc = 0;
@@ -1202,6 +1204,7 @@ void exitProgramMode() {
     // Float the DATA and CLOCK pins.
     pinMode(PIN_DATA, INPUT);
     pinMode(PIN_CLOCK, INPUT);
+    delay(DELAY_PGMMODE_MS);
     // Now in the idle state with the PIC powered off.
     state = STATE_IDLE;
     pc = 0;
